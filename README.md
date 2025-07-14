@@ -35,7 +35,7 @@ so that the user may discern not just what was predicted, but how well the model
 
 ## Data Provenance
 
-The dataset, a canonical corpus widely cited in machine learning pedagogy, was graciously obtained from the [UCI Machine Learning Repository](https://file.biolab.si/biolab/app/hint/car_dataset.html). 
+The dataset, a canonical corpus widely cited in machine learning pedagogy, was graciously obtained from [Marco Bohanec](https://file.biolab.si/biolab/app/hint/car_dataset.html). 
 
 Full citation:
 
