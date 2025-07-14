@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vehiculometric Adjudicator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Merriweather', serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f1f5f9;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      background-color: #0f172a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    .result, .metrics, .groupby {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e0f2fe;
+      border-left: 6px solid #0284c7;
+      border-radius: 6px;
+    }
+
+    .groupby ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Vehiculometric Adjudicator</h1>
+    <p><em>A Perspicacious Algorithmic Arbiter of Automotive Appropriateness</em></p>
+  </header>
+
+  <div class="container">
+    <form method="POST">
+      <h2>Submit Car Parameters</h2>
+
+      <label for="buy">Buying Price</label>
+      <select name="buy" id="buy" required>
+        <option value="vhigh">Very High</option>
+        <option value="high">High</option>
+        <option value="med">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <label for="maintain">Maintenance Cost</label>
+      <select name="maintain" id="maintain" required>
+        <option value="vhigh">Very High</option>
+        <option value="high">High</option>
+        <option value="med">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <label for="doors">Number of Doors</label>
+      <select name="doors" id="doors" required>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5more">5 or more</option>
+      </select>
+
+      <label for="person">Seating Capacity</label>
+      <select name="person" id="person" required>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="more">More</option>
+      </select>
+
+      <label for="luggage">Luggage Boot Size</label>
+      <select name="luggage" id="luggage" required>
+        <option value="small">Small</option>
+        <option value="med">Medium</option>
+        <option value="big">Big</option>
+      </select>
+
+      <label for="safety">Safety Level</label>
+      <select name="safety" id="safety" required>
+        <option value="low">Low</option>
+        <option value="med">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <label for="algo">Choose Algorithm</label>
+      <select name="algo" id="algo" required>
+        <option value="rf">Random Forest</option>
+        <option value="dt">Decision Tree</option>
+        <option value="svc">Support Vector Classifier</option>
+      </select>
+
+      <label for="feature">Groupby Feature</label>
+      <select name="feature" id="feature" required>
+        <option value="Buying">Buying</option>
+        <option value="Maintainance">Maintainance</option>
+        <option value="Doors">Doors</option>
+        <option value="Persons">Persons</option>
+        <option value="Luggage">Luggage</option>
+        <option value="Safety">Safety</option>
+      </select>
+
+      <button type="submit">Adjudicate</button>
+    </form>
+
+    {% if display %}
+      <div class="result">
+        <strong>Prediction:</strong> {{ predictedclass }}
+      </div>
+
+      <div class="metrics">
+        <strong>Model Metrics:</strong><br>
+        Accuracy: {{ accuracy }}%<br>
+        Precision: {{ precision }}
+      </div>
+    {% endif %}
+
+    {% if showtemplate %}
+      <div class="groupby">
+        <strong>Grouped by "{{ value|capitalize }}"</strong>
+        <ul>
+          {% for k, v in mapper.items() %}
+            <li>{{ k }} → {{ v }} samples</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  <footer>
+    Humbly authored by Harshdeep Sharma, with due reverence to data, design, and discovery.
+  </footer>
+</body>
+</html>
