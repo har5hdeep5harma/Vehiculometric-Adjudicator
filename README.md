@@ -3,7 +3,7 @@
 
 ## Prolegomenon
 
-Behold an earnest undertaking in the realm of algorithmic discernment — a machine learning–augmented artefact that prognosticates the **acceptability of a vehicle** based upon multifarious categorical criteria. Designed with a blend of computational rigour and aesthetic sensibility, this web application allows users to input vehicular attributes and receive a calibrated judgment on its overall acceptability, as perceived through the algorithmic gaze of various classifiers.
+Behold an earnest undertaking in the realm of algorithmic discernment - a machine learning–augmented artefact that prognosticates the **acceptability of a vehicle** based upon multifarious categorical criteria. Designed with a blend of computational rigour and aesthetic sensibility, this web application allows users to input vehicular attributes and receive a calibrated judgment on its overall acceptability, as perceived through the algorithmic gaze of various classifiers.
 
 ## Functional Overview
 
@@ -16,7 +16,7 @@ At its core, this adjudicator digests the following vehicular determinants:
 - **Safety Rating**
 
 Upon ingestion of the above, it employs one of several classifier algorithms to infer the **acceptability** of the vehicle:  
-`Unaccurate`, `Accurate`, `Good`, or `Very Good` — each determined through data-trained models with metric-backed veracity.
+`Unaccurate`, `Accurate`, `Good`, or `Very Good` - each determined through data-trained models with metric-backed veracity.
 
 ## Algorithms of Adjudication
 
@@ -69,7 +69,7 @@ This dataset encodes expert knowledge collected from hierarchical decision-makin
 ## Authorial Note
 This project was humbly conceived and constructed by Harshdeep Sharma, in quiet reverence to the elegance of logic and the marvel of machine learning.
 
-"Woven with code and contemplation — an ode to discernment through data."
+"Woven with code and contemplation - an ode to discernment through data."
 
 ## License
 This project is conceived solely for academic and demonstrative purposes. Redistribution, in part or whole, is prohibited without express permission.
